@@ -96,49 +96,39 @@ const Welcome = () => {
   return (
     <div>
       <div className="w-full h-[100vh]">
-        <h6 className="text-blue-800 font-bold">Home</h6>
+        <div className="flex items-center h-10 intro-y">
+          <h6 className="text-blue-800 font-bold">Beranda</h6>
+        </div>
         <h1 className="text-3xl font-bold text-gray-800">
           Emosi Manusia Terhadap Dampak Teknologi AI Bulan Agustus 2024
         </h1>
-        <div className="flex">
-          <div className="mt-10">
+        <div className="flex flex-col lg:flex-row overflow-x-auto">
+          <div className="lg:w-1/2 mt-10 pr-4">
             <h3 className="text-xl font-bold text-gray-800 mb-5">
               Data Emosi dalam Bentuk Grafik
             </h3>
-            <BarChart width={730} height={250} data={data}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" />
-              <YAxis />
-              <Tooltip />
-              <Bar dataKey="Marah" fill="#4682b4" barSize={1000} />
-              <Bar dataKey="Terkejut" fill="#4682b4" barSize={1000} />
-              <Bar dataKey="Takut" fill="#4682b4" barSize={1000} />
-              <Bar dataKey="Sedih" fill="#4682b4" barSize={1000} />
-              <Bar dataKey="Senang" fill="#4682b4" barSize={1000} />
-              <Bar dataKey="Netral" fill="#4682b4" barSize={1000} />
-            </BarChart>
-          </div>
-        </div>
-        <div className="mt-10 w-[50%] overflow-x-auto">
-          <h3 className="text-xl font-bold text-gray-800 mb-5">
-            Data Emosi dalam Bentuk Tabel
-          </h3>
-          <Table data={data} />
-        </div>
-        <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl mt-10">
-          <div className="md:flex">
-            <div className="md:flex-shrink-0">
-              <img
-                className="h-48 w-full object-cover md:h-full md:w-48"
-                src="https://via.placeholder.com/150"
-                alt="Card"
-              />
+            <div className="overflow-hidden border border-gray-200 rounded-lg">
+        <BarChart width={730} height={250} data={data}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Bar dataKey="Marah" fill="#4682b4" barSize={1000} />
+          <Bar dataKey="Terkejut" fill="#4682b4" barSize={1000} />
+          <Bar dataKey="Takut" fill="#4682b4" barSize={1000} />
+          <Bar dataKey="Sedih" fill="#4682b4" barSize={1000} />
+          <Bar dataKey="Senang" fill="#4682b4" barSize={1000} />
+          <Bar dataKey="Netral" fill="#4682b4" barSize={1000} />
+        </BarChart>
+              
             </div>
-            <div className="p-8">
-              <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
-                Judul
-              </div>
-              <p className="mt-2 text-gray-500">Konten</p>
+          </div>
+          <div className="lg:w-1/2 mt-10 pl-4">
+            <h3 className="text-xl font-bold text-gray-800 mb-5">
+              Data Emosi dalam Bentuk Tabel
+            </h3>
+            <div className="overflow-hidden border border-gray-200 rounded-lg">
+              <Table data={data} />
             </div>
           </div>
         </div>

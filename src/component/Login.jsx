@@ -27,16 +27,14 @@ const Login = () => {
 
   return (
     <section
-      className="hero is-fullheight is-fullwidth"
       style={{
-        backgroundColor: "#e2e8f0",
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         height: "100vh",
       }}
     >
-      <div className="flex justify-center align-center">
+      <div className="flex justify-center align-center mt-10">
         <div className=" is-center">
           <div className=" is-4">
             <form
