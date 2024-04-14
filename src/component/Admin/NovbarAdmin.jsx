@@ -6,14 +6,8 @@ import { useDispatch, useSelector } from "react-redux";
 
 
 const Navbar = () => {
-    const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const { user } = useSelector((state) => state.auth);
-    const logout = () => {
-    dispatch(LogOut());
-    dispatch(reset());
-    navigate("/");
-  };
+    
+  
   return (
     <div className="bg-white bg-opacity-80 backdrop-blur-md border-b w-full fixed flex justify-between items-center px-4 py-2 z-10">
       <Link to="/">
@@ -33,7 +27,7 @@ const Navbar = () => {
       
 
       <button onClick={logout}>
-        <h1 className="text-white bg-red-500 px-2 py-1 rounded">LOGOUT</h1>
+        <h1 className="px-2 py-1 rounded">LOGOUT</h1>
       </button>
     </div>
   );

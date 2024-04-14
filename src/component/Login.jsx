@@ -44,7 +44,7 @@ const Login = () => {
               {isError && (
                 <div className="flex justify-center">
                   <p className="bg-red-500 text-white px-2 py-1 text-sm absolute">
-                    {message}
+                    {message} error yah
                   </p>
                 </div>
               )}

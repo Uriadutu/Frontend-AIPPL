@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Welcome from "../component/Welcome.jsx";
 import { getMe } from "../features/authSlice.js";
+import LayoutJo from "./LayoutJo.jsx";
 
 const Home = () => {
 //   const dispatch = useDispatch();
@@ -20,9 +21,9 @@ const Home = () => {
 //     }
 //   }, [isError, navigate]);
   return (
-    <Layout>
+    <LayoutJo>
       <Welcome />
-    </Layout>
+    </LayoutJo>
   );
 };
 

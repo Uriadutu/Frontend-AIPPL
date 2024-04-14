@@ -1,30 +1,30 @@
-import React, {useEffect} from 'react'
-import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect } from "react";
+// import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getMe } from '../../features/authSlice.js';
-import LayoutAdmin from './LayoutAdmin.jsx';
-import Dashboard from '../../component/Admin/Dashboard.jsx';
-
+import { getMe } from "../../features/authSlice.js";
+import LayoutAdmin from "./LayoutAdmin.jsx";
+import Dashboard from "../../component/Admin/Dashboard.jsx";
+import { useDispatch } from "react-redux";
 
 const DashboardPage = () => {
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
-    const { isError } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { isError } = useSelector((state) => state.auth);
 
-    useEffect(() => {
-      dispatch(getMe());
-    }, [dispatch]);
+  useEffect(() => {
+    dispatch(getMe());
+  }, [dispatch]);
 
-    useEffect(() => {
-      if (isError) {
-        navigate("/login");
-      }
-    }, [isError, navigate]);
+  useEffect(() => {
+    if (isError) {
+      navigate("/");
+    }
+  }, [isError, navigate]);
   return (
     <LayoutAdmin>
-        <Dashboard />
+      <Dashboard />
     </LayoutAdmin>
   );
-}
+};
 
-export default DashboardPage
+export default DashboardPage;
